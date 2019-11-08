@@ -20,3 +20,7 @@
 .center-align {
     text-align: center;
 }
+
+.table th {
+    text-align: center;
+}
