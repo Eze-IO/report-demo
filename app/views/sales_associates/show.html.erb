@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sales_associate.name %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @sales_associate.department %>
+</p>
+
+<%= link_to 'Edit', edit_sales_associate_path(@sales_associate) %> |
+<%= link_to 'Back', sales_associates_path %>

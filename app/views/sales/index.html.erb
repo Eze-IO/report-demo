@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sales</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Amount</th>
+      <th>Sale Date</th>
+      <th>Sales Associate</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sales.each do |sale| %>
+      <tr>
+        <td class="right-align"><%= number_to_currency(sale.amount) %></td>
+        <td class="right-align"><%= sale.sale_date.to_formatted_s(:long) %></td>
+        <td class="center-align"><%= sale.sales_associate.name %></td>
+        <td><%= link_to 'Show', sale %></td>
+        <td><%= link_to 'Edit', edit_sale_path(sale) %></td>
+        <td><%= link_to 'Destroy', sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sale', new_sale_path %>
