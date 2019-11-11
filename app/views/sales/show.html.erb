@@ -2,17 +2,17 @@
 
 <p>
   <strong>Amount:</strong>
-  <%= @sale.amount %>
+  <%= number_to_currency(@sale.amount) %>
 </p>
 
 <p>
   <strong>Sale date:</strong>
-  <%= @sale.sale_date %>
+  <%= @sale.sale_date.to_formatted_s(:long) %>
 </p>
 
 <p>
   <strong>Sales associate:</strong>
-  <%= @sale.sales_associate_id %>
+  <%= link_to @sale.sales_associate.name, @sale.sales_associate %>
 </p>
 
 <%= link_to 'Edit', edit_sale_path(@sale) %> |

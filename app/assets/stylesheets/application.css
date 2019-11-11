@@ -21,6 +21,6 @@
     text-align: center;
 }
 
-.table th {
+.table th {.table-bordered
     text-align: center;
 }

@@ -1,0 +1,29 @@
+<div class="row"> 
+    <div class="col-lg-6 info-box">
+        <h2>Sales Overview</h2>
+        <p>
+            Sales Total for 2019: <span class="text-primary"> <%= number_to_currency @sales_total%></span>
+        </p>
+        <p>
+            
+        </p>
+    </div>
+    <div class="col-lg-6 info-box">
+        <h2>Associate of the Year</h2>
+        <p>Congratulations to <%= @highest_earner %> for the highest sales numbers for 2019! </p>
+    </div>
+</div>
+
+    <%= column_chart charts_sales_by_month_path,
+        xtitle: "Month",
+        ytitle: "Sales ($)",
+     title: "Sales per Month"
+    %>
+
+    <%= column_chart charts_sales_by_associate_path,
+     xtitle: "Associate",
+     ytitle: "Sales ($)",
+     title: "Total Sales by Associate "
+    %>
+
+

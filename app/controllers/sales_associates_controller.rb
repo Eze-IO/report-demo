@@ -4,7 +4,7 @@ class SalesAssociatesController < ApplicationController
   # GET /sales_associates
   # GET /sales_associates.json
   def index
-    @sales_associates = SalesAssociate.all
+    @pagy, @sales_associates = pagy(SalesAssociate.all)
   end
 
   # GET /sales_associates/1

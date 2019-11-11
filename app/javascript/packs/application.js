@@ -19,7 +19,8 @@ require("channels")
 
 import 'bootstrap'
 import '../stylesheets/application'
-
+require("chartkick")
+require("chart.js")
 
 document.addEventListener("turbolinks:load", () => {
     $('[data-toggle="tooltip"]').tooltip()
