@@ -5,7 +5,7 @@ class DashboardCalculations
   end
 
   def self.highest_earning_associate
-   SalesAssociate.find(DashboardCalculations.associates_total_sales.last.last) 
+   SalesAssociate.find(self.associates_total_sales.last.last) 
   end
 
   def self.associates_total_sales

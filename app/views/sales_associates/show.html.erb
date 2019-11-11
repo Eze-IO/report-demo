@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
-
+<div class="associate">
+    
 <p>
   <strong>Name:</strong>
   <%= @sales_associate.name %>
@@ -10,5 +11,10 @@
   <%= @sales_associate.department %>
 </p>
 
+<p>
+    <strong>Total Sales:</strong>
+    <%= number_to_currency @sales_associate.total_sales %>
+</p>
+</div>
+
 <%= link_to 'Edit', edit_sales_associate_path(@sales_associate) %> |
-<%= link_to 'Back', sales_associates_path %>
