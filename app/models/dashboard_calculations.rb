@@ -5,11 +5,11 @@ class DashboardCalculations
   end
 
   def self.highest_earning_associate
-   DashboardCalculations.associates_total_sales.last.first 
+   SalesAssociate.find(DashboardCalculations.associates_total_sales.last.last) 
   end
 
   def self.associates_total_sales
-    SalesAssociate.all.map {|sa| [sa.name, sa.total_sales] }.sort_by(&:last)
+    SalesAssociate.all.map {|sa| [sa.name, sa.total_sales, sa.id] }.sort_by(&:second)
   end
 
   def self.sales_by_date
