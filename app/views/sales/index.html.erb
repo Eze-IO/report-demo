@@ -18,10 +18,10 @@
       <tr>
         <td class="right-align"><%= number_to_currency(sale.amount) %></td>
         <td class="right-align"><%= sale.sale_date.to_formatted_s(:long) %></td>
-        <td class="center-align"><%= sale.sales_associate.name %></td>
-        <td><%= link_to 'Show', sale %></td>
+        <td class="center-align"><%= link_to sale.sales_associate.name, sale.sales_associate %></td>
+        <td><%= link_to 'Details', sale %></td>
         <td><%= link_to 'Edit', edit_sale_path(sale) %></td>
-        <td><%= link_to 'Destroy', sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete Sale', sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

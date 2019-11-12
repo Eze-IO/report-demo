@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :sales_associate_id %>
-    <%= form.text_field :sales_associate_id %>
+    <%= form.collection_select :sales_associate_id, SalesAssociate.all, :id, :name %>
   </div>
 
   <div class="actions">

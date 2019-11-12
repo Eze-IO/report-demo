@@ -1,11 +1,8 @@
 <p id="notice"><%= notice %></p>
 <div class="associate">
-    
-<p>
-  <strong>Name:</strong>
+<h2>
   <%= @sales_associate.name %>
-</p>
-
+</h2>
 <p>
   <strong>Department:</strong>
   <%= @sales_associate.department %>
@@ -16,5 +13,12 @@
     <%= number_to_currency @sales_associate.total_sales %>
 </p>
 </div>
+
+<div id="sales-list">
+    <% @sales_associate.sales.each do |sale| %>
+        <%= render "shared/sales_detail" , sale: sale, show_associate: false %>
+    <% end %>
+</div>
+
 
 <%= link_to 'Edit', edit_sales_associate_path(@sales_associate) %> |

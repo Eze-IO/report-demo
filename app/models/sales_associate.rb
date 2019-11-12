@@ -6,5 +6,4 @@ class SalesAssociate < ApplicationRecord
     sales.map(&:amount).sum
   end
 
-
 end

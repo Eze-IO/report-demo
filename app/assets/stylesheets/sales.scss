@@ -1,3 +1,18 @@
 // Place all the styles related to the Sales controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.sale-detail {
+	  border: 1px solid gray;
+	  padding: 10px;
+	  background: aliceblue;
+	  margin: 10px;
+}
+
+
+.sale-detail label {
+	  color: darkblue;
+	  font-weight: bold;
+}

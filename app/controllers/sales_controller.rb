@@ -4,7 +4,7 @@ class SalesController < ApplicationController
   # GET /sales
   # GET /sales.json
   def index
-    @pagy,@sales= pagy(Sale.all)
+    @pagy,@sales= pagy(Sale.all.order(:sale_date))
   end
 
   # GET /sales/1

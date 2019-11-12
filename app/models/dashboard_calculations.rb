@@ -1,15 +1,15 @@
 class DashboardCalculations
 
   def self.sales_total
-    Sale.select(:amount).map(&:amount).sum
+    Sale.sum(:amount)
   end
 
   def self.highest_earning_associate
-   SalesAssociate.find(self.associates_total_sales.last.last) 
+   SalesAssociate.find_by_name(self.associates_total_sales.last.first) 
   end
 
   def self.associates_total_sales
-    SalesAssociate.all.map {|sa| [sa.name, sa.total_sales, sa.id] }.sort_by(&:second)
+    SalesAssociate.all.map {|sa| [sa.name, sa.total_sales] }.sort_by(&:second)
   end
 
   def self.sales_by_date
