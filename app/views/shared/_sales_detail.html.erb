@@ -1,0 +1,28 @@
+<div class="sale-detail">
+    <p>
+        <label for="sale_date">Date of Sale</label>    
+        <%= formatted_date(sale.sale_date) %>
+    </p>
+    <p>
+        <label for="amount">Sale Amount</label>
+        <%= number_to_currency(sale.amount) %>
+    </p>
+    
+    <% if show_associate %>
+        <label for: "sales_associate">Sales Associate</label>
+        <%= sale.sales_associate.name %>
+    <% end %>
+
+    <p>
+        <label for="date-recorded">Date Entered in System</label>
+        <%= formatted_date(sale.created_at)%>
+    </p>
+
+    <% if sale.created_at != sale.updated_at %>
+        <p>
+            This record was modified on <%= formatted_date(sale.updated_at) %>
+        </p>
+    <% end %>
+
+    <%= link_to "Edit Record", edit_sale_path(sale)%>
+</div>
