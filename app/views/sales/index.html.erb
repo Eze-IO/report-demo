@@ -9,7 +9,7 @@
       <th>Amount</th>
       <th>Sale Date</th>
       <th>Sales Associate</th>
-      <th colspan="3">Actions</th>
+      <th class="datatable-nosort">Actions</th>
     </tr>
   </thead>
 
@@ -19,9 +19,13 @@
         <td class="right-align"><%= number_to_currency(sale.amount) %></td>
         <td class="right-align"><%= sale.sale_date.to_formatted_s(:long) %></td>
         <td class="center-align"><%= link_to sale.sales_associate.name, sale.sales_associate %></td>
-        <td><%= link_to 'Details', sale %></td>
-        <td><%= link_to 'Edit', edit_sale_path(sale) %></td>
-        <td><%= link_to 'Delete Sale', sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <div class="table-cell-container">
+            <div><%= link_to 'Details', sale %></div>
+            <div><%= link_to 'Edit', edit_sale_path(sale) %></div>
+            <div><%= link_to 'Delete Sale', sale, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+          <div>
+        </td>
       </tr>
     <% end %>
   </tbody>

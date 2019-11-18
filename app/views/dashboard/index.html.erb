@@ -14,16 +14,50 @@
     </div>
 </div>
 <div class="charts">
+    </br>
     <%= column_chart charts_sales_by_month_path,
-        xtitle: "Month",
-        ytitle: "Sales ($)",
+        xtitle: "Month(s)",
+        ytitle: "Sales($)",
      title: "Sales per Month"
     %>
+    </br>
     <%= column_chart charts_sales_by_associate_path,
-     xtitle: "Associate",
-     ytitle: "Sales ($)",
+     xtitle: "Associate(s)",
+     ytitle: "Sales($)",
      title: "Total Sales by Associate "
     %>
+
+    <!------------- average chart ---------------->
+    </br>
+    <%= column_chart charts_avg_sales_by_associate_path,
+     xtitle: "Associate(s)",
+     ytitle: "Sales($)",
+     title: "Average Sales by Associate "
+    %>
+    <!------------- minimum chart ---------------->
+    </br>
+    <%= column_chart charts_min_sale_by_associate_path,
+     xtitle: "Associate(s)",
+     ytitle: "Sale($)",
+     title: "Minimum Sale by Associate "
+    %>
+    <!------------- maximum chart ---------------->
+    </br>
+    <%= column_chart charts_max_sale_by_associate_path,
+     xtitle: "Associate(s)",
+     ytitle: "Sale($)",
+     title: "Maximum Sale by Associate "
+    %>
+    <!-------------------------------------------->
+
+    <!------------- revenue chart ---------------->
+    </br>
+    <%= column_chart charts_revenue_by_quarter_path,
+     xtitle: "Quarter(s)",
+     ytitle: "Sales($)",
+     title:  "Revenue per Quarter"
+    %>
+    <!-------------------------------------------->
 </div>
 
 

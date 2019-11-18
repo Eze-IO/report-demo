@@ -8,7 +8,7 @@
     <tr>
       <th>Name</th>
       <th>Department</th>
-      <th colspan="2">Actions</th>
+      <th class="datatable-nosort">Actions</th>
     </tr>
   </thead>
 
@@ -17,8 +17,12 @@
       <tr>
         <td><%= link_to sales_associate.name, sales_associate %></td>
         <td><%= sales_associate.department %></td>
-        <td><%= link_to 'Edit', edit_sales_associate_path(sales_associate) %></td>
-        <td><%= link_to 'Remove', sales_associate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <div class="table-cell-container">
+            <div><%= link_to 'Edit', edit_sales_associate_path(sales_associate) %></div>
+            <div><%= link_to 'Remove', sales_associate, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+          <div>
+        </td>
       </tr>
     <% end %>
   </tbody>
