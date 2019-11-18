@@ -19,11 +19,11 @@ class SalesAssociate < ApplicationRecord
 
   # Gets minimum sale
   def minimum_sale
-    sales.collect(&:amount).min
+    sales.collect(&:amount).min.to_i # Convert to integer
   end
 
   # Gets maximum sale
   def maximum_sale
-    sales.collect(&:amount).max
+    sales.collect(&:amount).max.to_i # Convert to integer
   end
 end

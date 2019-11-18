@@ -9,7 +9,7 @@ class DashboardCalculations
   end
 
   def self.associates_total_sales
-    SalesAssociate.all.map {|sa| [sa.name, sa.total_sales] }.sort_by(&:second)
+    SalesAssociate.all.map{|sa| [sa.name, sa.total_sales] }.sort_by(&:second)
   end
 
   #*********************************************#
@@ -17,15 +17,15 @@ class DashboardCalculations
   #*********************************************#
 
   def self.associates_average_sales
-    SalesAssociate.all.map {|sa| [sa.name, sa.average_sales] }.sort_by(&:second)
+    SalesAssociate.all.map{|sa| [sa.name, sa.average_sales] }.sort_by(&:second)
   end
 
   def self.associates_minimum_sale
-    SalesAssociate.all.map {|sa| [sa.name, sa.minimum_sale] }
+    SalesAssociate.all.map{|sa| [sa.name, sa.minimum_sale] }.sort_by(&:second)
   end
 
   def self.associates_maximum_sale
-    SalesAssociate.all.map {|sa| [sa.name, sa.maximum_sale] }
+    SalesAssociate.all.map{|sa| [sa.name, sa.maximum_sale] }.sort_by(&:second)
   end
 
   #*********************************************#
@@ -35,7 +35,13 @@ class DashboardCalculations
   #*********************************************#
 
   def self.quarters_revenues
-    Sale.find_by_sql("select (cast(strftime('%m', sale_date) as integer) + 2) / 3 as quarter, sum(amount) as total from sales group by quarter order by quarter")
+    a = Array.new
+    a.push(["Quarter 1", Sale.all.select{|s| s.quarter_number == 1 }.map{|q| q.amount.to_i }.sum])
+    a.push(["Quarter 2", Sale.all.select{|s| s.quarter_number == 2 }.map{|q| q.amount.to_i }.sum])
+    a.push(["Quarter 3", Sale.all.select{|s| s.quarter_number == 3 }.map{|q| q.amount.to_i }.sum])
+    a.push(["Quarter 4", Sale.all.select{|s| s.quarter_number == 4 }.map{|q| q.amount.to_i }.sum])
+    a.group_by(&:first).sort_by(&:first)
+    a
   end
 
   #*********************************************#
