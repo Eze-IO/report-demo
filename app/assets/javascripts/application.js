@@ -9,18 +9,6 @@
 
     src: https://github.com/rweng/jquery-datatables-rails
 */
-
-/*$(document).on('page:load', function() {
-    $('.table').DataTable({
-        "info": false,
-        "paging": false,
-        "searching": false,
-        "lengthChange": false,
-        "columnDefs": [
-                { "orderable": false, "targets": 'datatable-nosort' }
-            ]
-        });
-});*/
 $(document).ready(function(){
     $('.table').DataTable({
                 "info": false,
