@@ -31,6 +31,25 @@ class DashboardCalculations
   #*********************************************#
 
   #*********************************************#
+  #             Dashboard functions             #
+  #*********************************************#
+
+  def self.avarage_sales
+    (self.sales_total/Sale.all.count).to_i
+  end
+
+  def self.minimum_sale
+    Sale.all.map(&:amount).min
+  end
+
+  def self.maximum_sale
+    Sale.all.map(&:amount).max
+  end
+
+  #*********************************************#
+
+
+  #*********************************************#
   #            EC: Revenue function             #
   #*********************************************#
 

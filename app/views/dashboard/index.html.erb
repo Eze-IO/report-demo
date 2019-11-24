@@ -1,12 +1,10 @@
 <div class="row"> 
     <div class="col-lg-6 info-box">
         <h2>Sales Overview</h2>
-        <p>
-            Sales Total for 2019: <span class="text-primary"> <%= number_to_currency @sales_total%></span>
-        </p>
-        <p>
-            
-        </p>
+        <p>Total Sales for 2019: <span class="text-primary"> <%= number_to_currency @sales_total%></span></p>
+        <p>Average Sales for 2019: <span class="text-primary"> <%= number_to_currency @avarage_sales%></span></p>
+        <p>Minimum Sale for 2019: <span class="text-primary"> <%= number_to_currency @minimum_sale%></span></p>
+        <p>Maximum Sale for 2019: <span class="text-primary"> <%= number_to_currency @maximum_sale%></span></p>
     </div> 
     <div class="col-lg-6 info-box">
         <h2>Associate of the Year</h2>
